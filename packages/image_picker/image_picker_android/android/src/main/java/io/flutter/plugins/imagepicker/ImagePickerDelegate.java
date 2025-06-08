@@ -540,6 +540,7 @@ public class ImagePickerDelegate
 
     try {
       externalFilesDirectory.mkdirs();
+      System.out.println("File path: " + externalFilesDirectory.getAbsolutePath());
       image = File.createTempFile(filename, suffix, externalFilesDirectory);
     } catch (IOException e) {
       throw new RuntimeException(e);

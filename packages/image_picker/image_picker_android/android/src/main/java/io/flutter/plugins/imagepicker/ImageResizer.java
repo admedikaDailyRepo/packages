@@ -192,6 +192,7 @@ class ImageResizer {
     File cacheDirectory = context.getCacheDir();
     File externalFilesDirectory = new File(cacheDirectory, "my_image_folder");
     externalFilesDirectory.mkdirs();  // Buat folder kalau belum ada
+    System.out.println("File path: " + externalFilesDirectory.getAbsolutePath());
 
     File imageFile = createFile(externalFilesDirectory, name);
     FileOutputStream fileOutput = createOutputStream(imageFile);

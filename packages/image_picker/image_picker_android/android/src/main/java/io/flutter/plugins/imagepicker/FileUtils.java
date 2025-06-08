@@ -64,6 +64,8 @@ class FileUtils {
       String uuid = UUID.randomUUID().toString();
       File targetDirectory = new File(context.getCacheDir(), 'my_image_folder/' + uuid);
       targetDirectory.mkdir();
+      System.out.println("File path: " + targetDirectory.getAbsolutePath());
+
       // TODO(SynSzakala) according to the docs, `deleteOnExit` does not work reliably on Android; we should preferably
       //  just clear the picked files after the app startup.
       targetDirectory.deleteOnExit();
