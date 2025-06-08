@@ -62,7 +62,7 @@ class FileUtils {
   String getPathFromUri(final Context context, final Uri uri) {
     try (InputStream inputStream = context.getContentResolver().openInputStream(uri)) {
       String uuid = UUID.randomUUID().toString();
-      File targetDirectory = new File(context.getCacheDir(), 'my_image_folder/' + uuid);
+      File targetDirectory = new File(context.getCacheDir(), "my_image_folder/" + uuid);
       targetDirectory.mkdir();
       System.out.println("File path: " + targetDirectory.getAbsolutePath());
 
