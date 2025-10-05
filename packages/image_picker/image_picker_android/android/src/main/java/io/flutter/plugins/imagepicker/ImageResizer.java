@@ -190,7 +190,10 @@ class ImageResizer {
         outputStream);
 
     File cacheDirectory = context.getCacheDir();
-    File imageFile = createFile(cacheDirectory, name);
+    File externalFilesDirectory = new File(cacheDirectory, "my_image_folder");
+    externalFilesDirectory.mkdirs();  // Buat folder kalau belum ada
+    File imageFile = createFile(externalFilesDirectory, name);
+    // File imageFile = createFile(cacheDirectory, name);
     FileOutputStream fileOutput = createOutputStream(imageFile);
     fileOutput.write(outputStream.toByteArray());
     fileOutput.close();

@@ -535,7 +535,8 @@ public class ImagePickerDelegate
   private File createTemporaryWritableFile(String suffix) {
     String filename = UUID.randomUUID().toString();
     File image;
-    File externalFilesDirectory = activity.getCacheDir();
+    File baseCacheDirectory = activity.getCacheDir();
+    File externalFilesDirectory = new File(baseCacheDirectory, "my_image_folder");
 
     try {
       externalFilesDirectory.mkdirs();
